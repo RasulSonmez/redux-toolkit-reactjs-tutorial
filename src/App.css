@@ -26,3 +26,8 @@
  .completed{
    text-decoration: line-through;
  }
+
+ .active-lang{
+background-color: red !important;
+color: #ffff !important;
+ }

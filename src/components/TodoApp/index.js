@@ -6,7 +6,7 @@ import {
   remove,
   toggleCompleted,
   editTodo,
-} from "../../features/todoSlice";
+} from "../../features/TodoSlice";
 
 function TodoApp() {
   const todos = useSelector((state) => {
@@ -60,18 +60,19 @@ function TodoApp() {
     dispatch(toggleCompleted({ id: id }));
   };
   return (
-    <div className="App">
+    <div className="App card p-5">
       <h1>Todo List</h1>
       {isEditing ? (
         <div className="form">
           <h2>Update your plan for today</h2>
           <input
+            className="input"
             type="text"
             value={title}
             name="title"
             onChange={handleChange}
           ></input>
-          <button type="button" className="button" onClick={onEdit}>
+          <button type="button" className="btn btn-primary" onClick={onEdit}>
             Edit
           </button>
         </div>
@@ -79,28 +80,47 @@ function TodoApp() {
         <div>
           <span>
             <input
+              className="input"
               type="text"
               name="todo"
               value={todo}
               onChange={(e) => setTodo(e.currentTarget.value)}
             />
 
-            <button onClick={onSave}>Save</button>
+            <button className="btn btn-primary " onClick={onSave}>
+              Save
+            </button>
           </span>
 
-          <ul>
+          <ul className=" row mt-3">
             {todos.map((todo) => (
-              <li key={todo.id}>
+              <li
+                className="d-flex flex-row justify-content-between align-items-center mb-3 card"
+                key={todo.id}
+              >
                 <span className={todo.completed ? "completed" : ""}>
                   - {todo.title}
                 </span>
-                <button onClick={() => onDelete(todo.id)}>Delete</button>
-                <button onClick={() => toggle(todo.id)}>
-                  {todo.completed ? "completed" : "complete"}
-                </button>
-                <button onClick={() => onEditToggle(todo.id, todo.title)}>
-                  Edit
-                </button>
+                <div>
+                  <button
+                    className="btn btn-danger "
+                    onClick={() => onDelete(todo.id)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="btn btn-warning "
+                    onClick={() => toggle(todo.id)}
+                  >
+                    {todo.completed ? "completed" : "complete"}
+                  </button>
+                  <button
+                    className="btn btn-success "
+                    onClick={() => onEditToggle(todo.id, todo.title)}
+                  >
+                    Edit
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
@@ -108,7 +128,9 @@ function TodoApp() {
       )}
 
       <div>
-        <Link to="/">Go To Home</Link>
+        <Link className="nav-link" to="/">
+          Go To Home
+        </Link>
       </div>
     </div>
   );

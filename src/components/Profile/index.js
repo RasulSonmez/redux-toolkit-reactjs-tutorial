@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Profile() {
+  const user = useSelector((state) => state.loginReducer.value);
+
   return (
     <div>
-      Profile{" "}
-      <div>
-        <Link to="/">Go To Home</Link>
+      <h1>Profile</h1>
+      <div className="row card p-3">
+        <p>Name : {user.name} </p>
+        <p>SurName : {user.surname} </p>
       </div>
     </div>
   );

@@ -1,10 +1,13 @@
 import React from "react";
 import Login from "../components/Login";
+import Profile from "../components/Profile";
 
 function LoginPage() {
   return (
     <div>
-      <Login />
+      <div className="row">
+        <Login />
+      </div>
     </div>
   );
 }
