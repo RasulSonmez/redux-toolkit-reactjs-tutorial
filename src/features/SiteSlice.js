@@ -4,14 +4,15 @@ export const SiteSlice = createSlice({
   name: "site",
   initialState: {
     dark: localStorage.getItem("dark") || false,
-    language: "tr",
+    lang: localStorage["language"],
   },
   reducers: {
     setDarkMode: (state) => {
       state.dark = !state.dark;
     },
-    setLanguage: (state, action) => {
-      state.language = action.payload;
+    setLanguage: (state) => {
+      state.lang = state.lang === "tr" ? "en" : "tr";
+      localStorage["language"] = state.lang;
     },
   },
 });

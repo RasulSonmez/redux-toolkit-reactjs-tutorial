@@ -1,14 +1,13 @@
-import { useSelector } from "react-redux";
 import SiteSettings from "../SiteSettings";
+import { getText } from "../../utils/utils";
 
 function Header() {
-  const { dark, language } = useSelector((state) => state.site);
-
   return (
     <main>
-      mevcut dil {language}
+      <h2>{getText("title")}</h2>
+      <p>{getText("description")}</p>
       <br />
-      dark mod ={dark ? "evet " : "hayır "}
+
       <div className="mt-5">
         <SiteSettings />
       </div>
