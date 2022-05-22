@@ -11,8 +11,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 5rem;
-  padding: 2rem;
+ height: 100vh;
 }
 
 
@@ -30,4 +29,26 @@
  .active-lang{
 background-color: red !important;
 color: #ffff !important;
+ }
+
+ .dark{
+   background-color: #000;
+   color: #ffff;
+ }
+
+ .dark h1,h2{  
+  color: blue !important;
+}
+
+
+ .light{
+   background-color: #ddd;
+   color: #000;
+ }
+ .nav-link{
+   color: #795548 !important;
+ }
+
+ span,p,li{
+   color: blue;
  }

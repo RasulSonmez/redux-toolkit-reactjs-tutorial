@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const SiteSlice = createSlice({
   name: "site",
   initialState: {
-    dark: false,
+    dark: localStorage.getItem("dark") || false,
     language: "tr",
   },
   reducers: {
@@ -16,5 +16,5 @@ export const SiteSlice = createSlice({
   },
 });
 
-export const { setDarkModa, setLanguage } = SiteSlice.actions;
+export const { setDarkMode, setLanguage } = SiteSlice.actions;
 export default SiteSlice.reducer;

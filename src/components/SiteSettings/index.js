@@ -10,7 +10,11 @@ function SiteSettings() {
   const handleLanguage = (lang) => {
     dispatch(setLanguage(lang));
   };
+  const handleDarkMode = () => {
+    dispatch(setDarkMode());
+  };
 
+  console.log(language);
   return (
     <div>
       <h6>Language And Theme Two Settings</h6>
@@ -27,6 +31,11 @@ function SiteSettings() {
           {lang}
         </button>
       ))}
+      <div>
+        <button className="btn btn-primary mt-3" onClick={handleDarkMode}>
+          {dark ? "light moda geç" : "darkmoda geç"}
+        </button>
+      </div>
     </div>
   );
 }

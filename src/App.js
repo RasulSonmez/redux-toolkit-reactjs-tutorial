@@ -11,8 +11,12 @@ import Counter from "./components/Counter";
 
 function App() {
   const theme = useSelector((state) => state.themeReducer.value);
+  const { dark } = useSelector((state) => state.site);
   return (
-    <div className="App" style={{ background: theme, color: "orange" }}>
+    <div
+      className={dark ? "dark App" : "light App"}
+      style={{ background: theme }}
+    >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="counter" element={<Counter />} />
