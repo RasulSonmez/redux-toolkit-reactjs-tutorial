@@ -6,3 +6,5 @@
 -Profile,
 -Random Users,
 -Login Two
+-Languages,
+-Dark Mode
