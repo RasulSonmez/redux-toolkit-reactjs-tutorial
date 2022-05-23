@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, setDarkMode } from "../../features/SiteSlice";
+import Theme from "../Theme/index";
 
 function SiteSettings() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function SiteSettings() {
 
   return (
     <div>
-      <h6>Language And Theme Two Settings</h6>
+      <h6>Language And Theme Settings</h6>
 
       <div className="d-flex flex-row align-items-center justify-content-center">
         <div className="me-3">
@@ -69,6 +70,9 @@ function SiteSettings() {
             )}
           </button>
         </div>
+      </div>
+      <div className="mt-5">
+        <Theme />
       </div>
     </div>
   );

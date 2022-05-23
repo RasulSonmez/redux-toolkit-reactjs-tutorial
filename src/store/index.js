@@ -6,6 +6,7 @@ import { themeReducer } from "../features/ThemeSlice";
 import UserSlice from "../features/UserSlice";
 import counterSlice from "../features/CounterSlice";
 import SiteSlice from "../features/SiteSlice";
+import LoginUserSlice from "../features/LoginUserSlice";
 
 const rootReducer = combineReducers({
   loginReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   user: UserSlice,
   counter: counterSlice,
   site: SiteSlice,
+  loginUser: LoginUserSlice,
 });
 
 export const setupStore = () => {

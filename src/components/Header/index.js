@@ -8,7 +8,7 @@ function Header() {
       <p>{getText("description")}</p>
       <br />
 
-      <div className="mt-5">
+      <div className="mt-1">
         <SiteSettings />
       </div>
     </main>

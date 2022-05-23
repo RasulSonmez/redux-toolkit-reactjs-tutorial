@@ -24,6 +24,9 @@ function Home() {
           <Link className="mb-3  text-decoration-none nav-link" to="/Users">
             Random Users
           </Link>
+          <Link className="mb-3  text-decoration-none nav-link" to="/LoginUser">
+            Login User App
+          </Link>
         </div>
       </nav>
     </>

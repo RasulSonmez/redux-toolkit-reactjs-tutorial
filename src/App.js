@@ -6,12 +6,14 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Users from "./components/Users";
 import { useSelector } from "react-redux";
-import Theme from "./components/Theme";
 import Counter from "./components/Counter";
+import LoginUser from "./components/LoginUser";
+import Logout from "./components/LoginUser";
 
 function App() {
   const theme = useSelector((state) => state.themeReducer.value);
   const { dark } = useSelector((state) => state.site);
+
   return (
     <div
       className={dark ? "dark App" : "light App"}
@@ -24,10 +26,9 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Users" element={<Users />} />
+        <Route path="/LoginUser" element={<LoginUser />} />
+        <Route path="/Logout" element={<Logout />} />
       </Routes>
-      <div className="mt-5">
-        <Theme />
-      </div>
     </div>
   );
 }

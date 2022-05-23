@@ -60,73 +60,74 @@ function TodoApp() {
     dispatch(toggleCompleted({ id: id }));
   };
   return (
-    <div className="App card p-5">
-      <h1>Todo List</h1>
-      {isEditing ? (
-        <div className="form">
-          <h2>Update your plan for today</h2>
-          <input
-            className="input"
-            type="text"
-            value={title}
-            name="title"
-            onChange={handleChange}
-          ></input>
-          <button type="button" className="btn btn-primary" onClick={onEdit}>
-            Edit
-          </button>
-        </div>
-      ) : (
-        <div>
-          <span>
+    <div>
+      <div className="card p-5">
+        <h1>Todo List</h1>
+        {isEditing ? (
+          <div className="form">
+            <h2>Update your plan for today</h2>
             <input
               className="input"
               type="text"
-              name="todo"
-              value={todo}
-              onChange={(e) => setTodo(e.currentTarget.value)}
-            />
-
-            <button className="btn btn-primary " onClick={onSave}>
-              Save
+              value={title}
+              name="title"
+              onChange={handleChange}
+            ></input>
+            <button type="button" className="btn btn-primary" onClick={onEdit}>
+              Edit
             </button>
-          </span>
+          </div>
+        ) : (
+          <div>
+            <span>
+              <input
+                className="input"
+                type="text"
+                name="todo"
+                value={todo}
+                onChange={(e) => setTodo(e.currentTarget.value)}
+              />
 
-          <ul className=" row mt-3">
-            {todos.map((todo) => (
-              <li
-                className="d-flex flex-row justify-content-between align-items-center mb-3 card"
-                key={todo.id}
-              >
-                <span className={todo.completed ? "completed" : ""}>
-                  - {todo.title}
-                </span>
-                <div>
-                  <button
-                    className="btn btn-danger "
-                    onClick={() => onDelete(todo.id)}
-                  >
-                    Delete
-                  </button>
-                  <button
-                    className="btn btn-warning "
-                    onClick={() => toggle(todo.id)}
-                  >
-                    {todo.completed ? "completed" : "complete"}
-                  </button>
-                  <button
-                    className="btn btn-success "
-                    onClick={() => onEditToggle(todo.id, todo.title)}
-                  >
-                    Edit
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+              <button className="btn btn-primary " onClick={onSave}>
+                Save
+              </button>
+            </span>
 
+            <ul className=" row mt-3">
+              {todos.map((todo) => (
+                <li
+                  className="d-flex flex-row justify-content-between align-items-center mb-3 card"
+                  key={todo.id}
+                >
+                  <span className={todo.completed ? "completed" : ""}>
+                    - {todo.title}
+                  </span>
+                  <div>
+                    <button
+                      className="btn btn-danger "
+                      onClick={() => onDelete(todo.id)}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className="btn btn-warning "
+                      onClick={() => toggle(todo.id)}
+                    >
+                      {todo.completed ? "completed" : "complete"}
+                    </button>
+                    <button
+                      className="btn btn-success "
+                      onClick={() => onEditToggle(todo.id, todo.title)}
+                    >
+                      Edit
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
       <div>
         <Link className="nav-link" to="/">
           Go To Home
